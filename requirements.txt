@@ -1,0 +1,13 @@
+pandas
+numpy
+seaborn
+scikit-learn
+kaggle
+kagglehub
+astrapy
+python-dotenv
+time
+flask
+
+
+-e .

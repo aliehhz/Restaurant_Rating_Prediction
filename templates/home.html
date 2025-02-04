@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Rating Prediction Form</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            color: white;
+        }
+        .hero {
+            position: relative;
+            height: 100vh; /* Ensures it covers the full viewport */
+            width: 100%;
+            overflow: hidden; /* Prevents scrolling caused by the video */
+        }
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(3px);
+            z-index: -1;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        form {
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            width: 130%;
+            max-width: 1000px;
+            margin: 0; 
+            color: black;
+            display: grid; /* Use CSS Grid */
+            grid-template-columns: repeat(3, 1fr);/* Create 3 columns */
+            grid-gap: 10px; /* Add space between grid items */
+            align-items: center; /* Align items in the center */
+            position: relative; /* Needed for the negative margin trick */
+            left: -15%; 
+            
+        }   
+                
+        
+        form input, form select, form button {
+            width: 100%;              /* Ensure full width for input, select, and button */
+            padding: 15px;            /* Consistent padding */
+            margin: 10px 0;           /* Consistent spacing */
+            border: 1px solid #ccc;  /* Border for all elements */
+            border-radius: 5px;      /* Same border radius for all elements */
+            font-size: 1em;           /* Consistent font size */
+            box-sizing: border-box;   /* Ensures padding doesn't affect width calculation */
+        }
+        
+
+        form select, form input[type="text"], form input[type="number"] {
+            height: 50px;             /* Consistent height for input and select fields */
+        }
+
+        form button {
+            margin-top: 5px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            padding: 15px;
+            grid-column: span 3; /* Make the button span across both columns */
+        }
+
+        form button:hover {
+            background-color: #d35400;
+            transform: scale(1.05);
+        }
+
+        .predicted-rating {
+            grid-column: span 3; /* Make the rectangle span across both columns */
+            margin-top: 5px;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white; /* Text color */
+            background-color: #2b7a59; /* Green background */
+            border: 2px solid #1a4d40; /* Optional: darker green border */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+            display: none; /* Initially hidden */
+        }
+
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            z-index: 10;
+        }   
+    </style>
+    
+</head>  
+<body>
+    <div class="hero">
+        <video autoplay loop muted>
+            <source src= "{{ url_for('static', filename='videos/home_background.mp4') }}"  type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Restaurant Rating Prediction</h1>
+            <form action="{{ url_for('predict_datapoint')}}" method="POST">
+                <input type="text" name="name" placeholder="Enter The Restaurant Name" required>
+                <select name="location" required>
+                    <option value="">Select Restaurant location</option>
+                    <option value="Banashankari">Banashankari</option>
+                    <option value="Bannerghatta Road">Bannerghatta Road</option>
+                    <option value="Banaswadi">Banaswadi</option>
+                    <option value="Basavanagudi">Basavanagudi</option>
+                    <option value="Basaveshwara Nagar">Basaveshwara Nagar</option>
+                    <option value="Bellandur">Bellandur</option>
+                    <option value="Bommanahalli">Bommanahalli</option>
+                    <option value="Brigade Road">Brigade Road</option>
+                    <option value="Brookefield">Brookefield</option>
+                    <option value="BTM">BTM</option>
+                    <option value="Church Street">Church Street</option>
+                    <option value="City Market">City Market</option>
+                    <option value="Commercial Street">Commercial Street</option>
+                    <option value="Cunningham Road">Cunningham Road</option>
+                    <option value="Domlur">Domlur</option>
+                    <option value="Ejipura">Ejipura</option>
+                    <option value="Electronic City">Electronic City</option>
+                    <option value="Frazer Town">Frazer Town</option>
+                    <option value="HBR Layout">HBR Layout</option>
+                    <option value="Hennur">Hennur</option>
+                    <option value="Hosur Road">Hosur Road</option>
+                    <option value="HSR">HSR</option>
+                    <option value="Indiranagar">Indiranagar</option>
+                    <option value="ITPL Main Road, Whitefield">ITPL Main Road, Whitefield</option>
+                    <option value="Jayanagar">Jayanagar</option>
+                    <option value="JP Nagar">JP Nagar</option>
+                    <option value="Jeevan Bhima Nagar">Jeevan Bhima Nagar</option>
+                    <option value="Kaggadasapura">Kaggadasapura</option>
+                    <option value="Kalyan Nagar">Kalyan Nagar</option>
+                    <option value="Kammanahalli">Kammanahalli</option>
+                    <option value="Koramangala 1st Block">Koramangala 1st Block</option>
+                    <option value="Koramangala 2nd Block">Koramangala 2nd Block</option>
+                    <option value="Koramangala 3rd Block">Koramangala 3rd Block</option>
+                    <option value="Koramangala 4th Block">Koramangala 4th Block</option>
+                    <option value="Koramangala 5th Block">Koramangala 5th Block</option>
+                    <option value="Koramangala 6th Block">Koramangala 6th Block</option>
+                    <option value="Koramangala 7th Block">Koramangala 7th Block</option>
+                    <option value="Koramangala 8th Block">Koramangala 8th Block</option>
+                    <option value="Kumaraswamy Layout">Kumaraswamy Layout</option>
+                    <option value="Lavelle Road">Lavelle Road</option>
+                    <option value="Majestic">Majestic</option>
+                    <option value="Malleshwaram">Malleshwaram</option>
+                    <option value="Marathahalli">Marathahalli</option>
+                    <option value="MG Road">MG Road</option>
+                    <option value="Nagawara">Nagawara</option>
+                    <option value="New BEL Road">New BEL Road</option>
+                    <option value="Old Airport Road">Old Airport Road</option>
+                    <option value="Race Course Road">Race Course Road</option>
+                    <option value="Rajajinagar">Rajajinagar</option>
+                    <option value="Residency Road">Residency Road</option>
+                    <option value="Richmond Road">Richmond Road</option>
+                    <option value="Sarjapur Road">Sarjapur Road</option>
+                    <option value="Seshadripuram">Seshadripuram</option>
+                    <option value="Shanti Nagar">Shanti Nagar</option>
+                    <option value="Shivajinagar">Shivajinagar</option>
+                    <option value="South Bangalore">South Bangalore</option>
+                    <option value="St. Marks Road">St. Marks Road</option>
+                    <option value="Thippasandra">Thippasandra</option>
+                    <option value="Ulsoor">Ulsoor</option>
+                    <option value="Varthur Main Road, Whitefield">Varthur Main Road, Whitefield</option>
+                    <option value="Vasanth Nagar">Vasanth Nagar</option>
+                    <option value="Whitefield">Whitefield</option>
+                    <option value="Wilson Garden">Wilson Garden</option>
+                    <option value="Yeshwantpur">Yeshwantpur</option>
+                    <option value="Others">Others</option>
+                  </select>
+                  
+                
+                
+                <select name="category" required>
+                    <option value="">Select  Restaurant Category</option>
+                    <option value="Buffet">Buffet</option>
+                    <option value="Cafes">Cafes</option>
+                    <option value="Delivery">Delivery</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Drinks & nightlife">Drinks & nightlife</option>
+                    <option value="Dine-out">Dine-out</option>
+                    <option value="Pubs and Bars">Pubs and bars</option>
+                  </select>
+
+                  <select name="rest_type" required>
+                    <option value="">Select Restaurant Type</option>
+                    <option value="Bakery">Bakery</option>
+                    <option value="Bar">Bar</option>
+                    <option value="Beverage Shop">Beverage Shop</option>
+                    <option value="Cafe">Cafe</option>
+                    <option value="Casual Dining">Casual Dining</option>
+                    <option value="Casual Dining, Bar">Casual Dining, Bar</option>
+                    <option value="Delivery">Delivery</option>
+                    <option value="Dessert Parlor">Dessert Parlor</option>
+                    <option value="Food Court">Food Court</option>
+                    <option value="Quick Bites">Quick Bites</option>
+                    <option value="Takeaway, Delivery">Takeaway, Delivery</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                  
+                  <select name="grouped_cuisines" required>
+                    <option value="">Select Restaurant Cuisine</option>
+                    <option value="Asian Cuisine">Asian Cuisine</option>
+                    <option value="Desserts & Beverages">Desserts & Beverages</option>
+                    <option value="East Indian Cuisine">East Indian Cuisine</option>
+                    <option value="Fast Food & Street Food">Fast Food & Street Food</option>
+                    <option value="Fusion & Miscellaneous">Fusion & Miscellaneous</option>
+                    <option value="Fusion/Contemporary Indian Cuisine">Fusion/Contemporary Indian Cuisine</option>
+                    <option value="Healthy & Vegan">Healthy & Vegan</option>
+                    <option value="Mughlai & Hyderabadi Cuisine">Mughlai & Hyderabadi Cuisine</option>
+                    <option value="North Indian Cuisine">North Indian Cuisine</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="South Indian Cuisine">South Indian Cuisine</option>
+                    <option value="Western Cuisine">Western Cuisine</option>
+                    <option value="West Indian Cuisine">West Indian Cuisine</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                
+                  
+               
+                
+
+                <select name="online_order" required>
+                    <option value="">Online Order Available?</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <select name="book_table" required>
+                    <option value="">Table Booking Available?</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <input type="number" step="1" min="0" name="votes" placeholder="Number of the Votes" required>
+
+                <input type="number" step="1"  min="0" name="cost2plates" placeholder="Cost for Two Plates" required>
+                        
+                
+                <button type="submit">Predict Rating</button>
+            </form>
+            {% if results is not none %}
+            <div class="predicted-rating" style="display: block;">
+                Prediction Result: {{ results }}
+            </div>
+            {% else %}
+            <div class="predicted-rating" style="display: none;"></div>
+            {% endif %}
+
+            </div>
+        <div class="footer">
+            <p>Powered by Data Science | Restaurant Rating Prediction Tool</p>
+        </div>
+    </div>
+    
+        
+</body>
+</html>
+
