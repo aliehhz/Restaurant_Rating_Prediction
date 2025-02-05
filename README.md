@@ -1,5 +1,8 @@
 # Restaurant Rating Prediction
 
+![Profile Pictur](https://www.freepik.com/free-photo/full-shot-smiley-woman-with-smartphone_26006350.htm#fromView=image_search_similar&page=1&position=7&uuid=1e193df9-3eea-43a0-b8b8-f842849831c8&new_detail=true)
+
+
 ## Live Demo in Render
 Try the live version of the project here:
 
