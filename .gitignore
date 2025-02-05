@@ -167,7 +167,9 @@ cython_debug/
 #secrets
 src/components/config/secure-connect-db-restaurant-rating-prediction.zip
 src/components/config/db_secrets.env
+src/components/config/Render.env
 
 # Ignore data and artifact folders
+config/
 data/
 artifacts/
