@@ -15,13 +15,13 @@ This app predicts student performance based on input features like gender, paren
 
 ## About This Project
 
- 01.data_ingestion.py 
- 02.data_cleaning.py
- 03.upload_to_cassandra.py
- 04.download_from_cassandra.py
- 05.data_preprocessing.py
- 06.data_transformation.py
- 07.model_trainer.py
+- 01.data_ingestion.py 
+- 02.data_cleaning.py
+- 03.upload_to_cassandra.py
+- 04.download_from_cassandra.py
+- 05.data_preprocessing.py
+- 06.data_transformation.py
+- 07.model_trainer.py
 
 
 
