@@ -1,4 +1,4 @@
-## Restaurant Rating Prediction
+# Restaurant Rating Prediction
 
 ## Live Demo in Render
 Try the live version of the project here:
