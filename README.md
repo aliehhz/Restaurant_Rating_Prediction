@@ -1,6 +1,7 @@
 # Restaurant Rating Prediction
 
-![Alt Text](https://www.freepik.com/free-photo/full-shot-smiley-woman-with-smartphone_26006350.htm#fromView=image_search_similar&page=1&position=7&uuid=1e193df9-3eea-43a0-b8b8-f842849831c8&new_detail=true)
+<img src="https://raw.githubusercontent.com/your-username/your-repo/main/images/my-image.png](https://www.freepik.com/free-photo/full-shot-smiley-woman-with-smartphone_26006350.htm#fromView=image_search_similar&page=1&position=7&uuid=1e193df9-3eea-43a0-b8b8-f842849831c8&new_detail=true)" width="300">
+
 
 
 ## Live Demo in Render
