@@ -82,6 +82,27 @@
             color: white;
             text-align: center;
         }
+        @media (max-width: 768px) {
+        .hero {
+            height: auto; /* Adjusts height for small screens */
+        }
+
+        .content {
+            padding: 10px;
+            text-align: center;
+        }
+
+        form {
+            grid-template-columns: 1fr; /* Changes to a single-column layout */
+            width: 100%; /* Uses full width */
+            left: 0; /* Resets the left position */
+        }
+
+        form button {
+            grid-column: span 1; /* Fits within one column */
+        }
+        }
+
     </style>
 </head>
 <body>
