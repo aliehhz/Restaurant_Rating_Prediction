@@ -13,35 +13,52 @@ class PredictPipeline:
     def __init__(self):
         pass
 
+    def download_file(self, url, save_path):
+        """Downloads a file from a URL and saves it locally."""
+        response = requests.get(url, stream=True)
+
+        if response.status_code == 200:
+            with open(save_path, "wb") as f:
+                f.write(response.content)  # ✅ Save downloaded file to the correct location
+            print(f"Downloaded: {save_path}")
+        else:
+            raise Exception(f"Failed to download file from {url}. Status Code: {response.status_code}")
+
     def predict(self, features):
         try:
-            logging.info("Starting prediction pipeline...")
+            print("Starting prediction pipeline...")
+
+            # Define local file paths
             model_path = os.path.join("artifacts", "model.pkl")
-            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
-            logging.info(f"Loading model from: {model_path}")
-            logging.info(f"Loading preprocessor from: {preprocessor_path}")
+            preprocessor_path = os.path.join("artifacts", "preprocessor.pkl")
 
-
-
+            # Check if model exists, otherwise download it
             if os.path.exists(model_path):
-                model = load_object(model_path)
+                print("Model found locally.")
             else:
-                url = "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Model/model.pkl"
-                response = requests.get(url)
-                with open("model.pkl", "wb") as f:
-                    f.write(response.content)
-                model = load_object("model.pkl")
+                print("Model not found locally. Downloading...")
+                self.download_file(
+                    "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Model/model.pkl",
+                    model_path
+                )
 
+            model = load_object(model_path)  # ✅ Load model from correct path
+
+            # Check if preprocessor exists, otherwise download it
             if os.path.exists(preprocessor_path):
-                preprocessor = load_object(preprocessor_path)
+                print("Preprocessor found locally.")
             else:
-                url = "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Preprocessor/preprocessor.pkl"
-                response = requests.get(url)
-                with open("preprocessor.pkl", "wb") as f:
-                    f.write(response.content)
-                preprocessor = load_object("preprocessor.pkl")
+                print("Preprocessor not found locally. Downloading...")
+                self.download_file(
+                    "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Preprocessor/preprocessor.pkl",
+                    preprocessor_path
+                )
 
+            preprocessor = load_object(preprocessor_path)  # ✅ Load preprocessor
 
+            print("Model and preprocessor loaded successfully.")
+
+           
             #model = load_object(file_path=model_path)
             #preprocessor = load_object(file_path=preprocessor_path)
             
