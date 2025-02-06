@@ -5,6 +5,7 @@ import pandas as pd
 from src.logger import logging
 from src.exception import CustomException
 from src.utils import load_object
+import requests
 
 
 
@@ -19,9 +20,30 @@ class PredictPipeline:
             preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
             logging.info(f"Loading model from: {model_path}")
             logging.info(f"Loading preprocessor from: {preprocessor_path}")
-            
-            model = load_object(file_path=model_path)
-            preprocessor = load_object(file_path=preprocessor_path)
+
+
+
+            if os.path.exists(model_path):
+                model = load_object(model_path)
+            else:
+                url = "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Model/model.pkl"
+                response = requests.get(url)
+                with open("model.pkl", "wb") as f:
+                    f.write(response.content)
+                model = load_object("model.pkl")
+
+            if os.path.exists(preprocessor_path):
+                preprocessor = load_object(preprocessor_path)
+            else:
+                url = "https://github.com/Alieh-hz/Restaurant_Rating_Prediction/releases/download/v1.0_Preprocessor/preprocessor.pkl"
+                response = requests.get(url)
+                with open("preprocessor.pkl", "wb") as f:
+                    f.write(response.content)
+                preprocessor = load_object("preprocessor.pkl")
+
+
+            #model = load_object(file_path=model_path)
+            #preprocessor = load_object(file_path=preprocessor_path)
             
             logging.info("Model and preprocessor loaded successfully.")
             data_scaled = preprocessor.transform(features)
