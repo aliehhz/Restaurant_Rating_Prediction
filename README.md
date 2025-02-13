@@ -2,11 +2,12 @@
 
 ![Alt Text](https://raw.githubusercontent.com/Alieh-hz/Restaurant_Rating_Prediction/main/static/images/img1.jpg)
 
+# Try the live version of the project here:
 
+## Live Demo in AWS
+http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/
 
 ## Live Demo in Render
-Try the live version of the project here:
-
 [Restaurant Rating Prediction App](https://restaurant-rating-prediction-yw9u.onrender.com)
 
 This app predicts student performance based on input features like gender, parental education, and test preparation. It showcases a machine learning pipeline integrated with Flask.
