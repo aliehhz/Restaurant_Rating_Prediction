@@ -39,6 +39,7 @@ This app predicts student performance based on input features like gender, paren
 
 
 
+
 #<a href="https://www.freepik.com/free-photo/full-shot-smiley-woman-with-smartphone_26006350.htm#fromView=image_search_similar&page=1&position=7&uuid=1e193df9-3eea-43a0-b8b8-f842849831c8&new_detail=true">Image by Freepik</a>
 
 
