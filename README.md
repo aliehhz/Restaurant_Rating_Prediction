@@ -5,10 +5,10 @@
 # Try the live version of the project here:
 
 ## Live Demo in AWS
-http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/
+[Restaurant Rating Prediction App in AWS](http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/)
 
 ## Live Demo in Render
-[Restaurant Rating Prediction App](https://restaurant-rating-prediction-yw9u.onrender.com)
+[Restaurant Rating Prediction App in Render](https://restaurant-rating-prediction-yw9u.onrender.com)
 
 This app predicts student performance based on input features like gender, parental education, and test preparation. It showcases a machine learning pipeline integrated with Flask.
 
