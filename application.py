@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, render_template
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline  
 from src.logger import logging
+import os
 
 
 application = Flask(__name__)
@@ -60,6 +61,7 @@ def predict_datapoint():
         # Return the result to the user
         return render_template('home.html', results=results)  # Display the prediction result
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")  # Run the app
+debug_mode = os.getenv("FLASK_DEBUG", "False").lower() == "true"
 
+if __name__ == "__main__":
+    application.run(debug=debug_mode)
