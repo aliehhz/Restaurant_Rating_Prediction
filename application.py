@@ -65,3 +65,8 @@ debug_mode = os.getenv("FLASK_DEBUG", "False").lower() == "true"
 
 if __name__ == "__main__":
     application.run(debug=debug_mode)
+
+
+
+#For macOS/Linux: export FLASK_DEBUG=True
+#For Windows: set FLASK_DEBUG=True

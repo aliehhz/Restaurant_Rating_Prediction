@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10.16  # Change to your version
+          python-version: 3.10.16 
 
       - name: Install dependencies
         run: |
@@ -28,5 +28,5 @@ jobs:
 
       - name: Build the project
         run: |
-          echo "Building the project..."
+          echo "Build step is skipped"
           # Add your build commands (if needed)
