@@ -62,10 +62,10 @@ def predict_datapoint():
         return render_template('home.html', results=results)  # Display the prediction result
 
 debug_mode = os.getenv("FLASK_DEBUG", "False").lower() == "true"
+port = int(os.getenv("PORT", 5000))  # Use Render's assigned port or default to 5000
 
 if __name__ == "__main__":
-    application.run(debug=debug_mode)
-
+    application.run(host="0.0.0.0", port=port, debug=debug_mode)
 
 
 #For macOS/Linux: export FLASK_DEBUG=True
