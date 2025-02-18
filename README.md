@@ -10,7 +10,7 @@
 ## Live Demo in Render
 [Restaurant Rating Prediction App in Render](https://restaurant-rating-prediction-yw9u.onrender.com)
 
-This app predicts student performance based on input features like gender, parental education, and test preparation. It showcases a machine learning pipeline integrated with Flask.
+The Restaurant Rating Prediction application predicts restaurant ratings based on features like location, category, and user votes. It showcases a machine learning pipeline integrated with Flask for seamless predictions.
 
 ### Important Notes
 
