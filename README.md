@@ -14,7 +14,7 @@
 - The application is hosted on Render's free tier, which puts the server to sleep after a period of inactivity. As a result, it may take 1-2 minutes for the app to load initially.
 - Once the server is active, subsequent requests will load much faster.
 
-  ---
+---
 
 ## 🎥 Project Demo  
 Check out the full project walkthrough on YouTube!  
