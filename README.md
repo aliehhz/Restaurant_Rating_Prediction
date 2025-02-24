@@ -13,12 +13,20 @@
 The Restaurant Rating Prediction application predicts restaurant ratings based on features like location, category, and user votes. It showcases a machine learning pipeline integrated with Flask for seamless predictions.
 
 ### Important Notes
-
 - The application is hosted on Render's free tier, which puts the server to sleep after a period of inactivity. As a result, it may take 1-2 minutes for the app to load initially.
 - Once the server is active, subsequent requests will load much faster.
+  
 
 ## About This Project
 The project uses machine learning models like Random Forest and other classifiers to predict restaurant ratings. The features include location, cuisine type, and customer feedback, and the application is deployed using AWS and Render.
+
+
+## 🛠️ Tech Stack
+#### Python (Data Preprocessing & Model Training)
+#### Scikit-Learn, Pandas, NumPy (ML & Data Processing)
+#### AWS (Deployment & Infrastructure)
+#### GitHub Actions, CodePipeline (CI/CD Automation)  
+
 
 ## Main Python Scripts:
 01.data_ingestion.py - Data ingestion from external sources.  
@@ -29,18 +37,15 @@ The project uses machine learning models like Random Forest and other classifier
 06.data_transformation.py - Transforming the dataset for model training.  
 07.model_trainer.py - Training the machine learning model.
 
-## 🛠️ Tech Stack
-#### Python (Data Preprocessing & Model Training)
-#### Scikit-Learn, Pandas, NumPy (ML & Data Processing)
-#### AWS (Deployment & Infrastructure)
-#### GitHub Actions, CodePipeline (CI/CD Automation)
 
-## ⚙️ Installation & Setup
+  
+## ⚙️ Installation & Setup  
+
 ### 1️⃣ Clone the repository
 Clone the repository to your local machine:
 
-git clone https://github.com/yourusername/restaurant-rating-prediction.git
-cd restaurant-rating-prediction
+$ git clone https://github.com/yourusername/restaurant-rating-prediction.git
+$ cd restaurant-rating-prediction
 
 ### 2️⃣ Set up the environment
 It's recommended to use a virtual environment to manage dependencies. You can create one using venv or conda:
