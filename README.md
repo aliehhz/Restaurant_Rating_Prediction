@@ -2,40 +2,52 @@
 
 ![Alt Text](https://raw.githubusercontent.com/Alieh-hz/Restaurant_Rating_Prediction/main/static/images/img1.jpg)
 
-# Try the live version of the project here:
+## Try the live version of the project here:
 
-## Live Demo in AWS
+### Live Demo in AWS
 [Restaurant Rating Prediction App in AWS](http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/)
 
-## Live Demo in Render
+### Live Demo in Render
 [Restaurant Rating Prediction App in Render](https://restaurant-rating-prediction-yw9u.onrender.com)
 
-### Important Notes
+#### 📌 Important Notes
 - The application is hosted on Render's free tier, which puts the server to sleep after a period of inactivity. As a result, it may take 1-2 minutes for the app to load initially.
 - Once the server is active, subsequent requests will load much faster.
-  
 
-## About This Project
-The project uses machine learning models like Random Forest and other classifiers to predict restaurant ratings. The features include location, cuisine type, and customer feedback, and the application is deployed using AWS and Render.
+  ---
+
+## 📂 About This Project
+This project uses **machine learning models** like **Random Forest** and other classifiers to predict restaurant ratings.  
+### **Features Used in Prediction:**  
+- **Location**  
+- **Cuisine Type**  
+- **Customer Feedback**  
+- **Other restaurant-related attributes**  
+
+The application is deployed using **AWS** and **Render**.
+
+---
+
+## 🛠️ Tech Stack  
+- **Python** (Data Preprocessing & Model Training)  
+- **Scikit-Learn, Pandas, NumPy** (ML & Data Processing)  
+- **AWS** (Deployment & Infrastructure)  
+- **GitHub Actions, CodePipeline** (CI/CD Automation)  
 
 
-## 🛠️ Tech Stack
-#### Python (Data Preprocessing & Model Training)
-#### Scikit-Learn, Pandas, NumPy (ML & Data Processing)
-#### AWS (Deployment & Infrastructure)
-#### GitHub Actions, CodePipeline (CI/CD Automation)  
+---
 
+## 📜 Main Python Scripts  
+```plaintext
+01.data_ingestion.py       # Data ingestion from external sources.
+02.data_cleaning.py        # Cleaning the dataset for analysis.
+03.upload_to_cassandra.py  # Uploading processed data to a Cassandra database.
+04.download_from_cassandra.py  # Fetching data from Cassandra.
+05.data_preprocessing.py   # Preprocessing the dataset (feature engineering).
+06.data_transformation.py  # Transforming the dataset for model training.
+07.model_trainer.py        # Training the machine learning model.
 
-## Main Python Scripts:
-01.data_ingestion.py - Data ingestion from external sources.  
-02.data_cleaning.py - Cleaning the dataset for analysis.  
-03.upload_to_cassandra.py - Uploading processed data to a Cassandra database.  
-04.download_from_cassandra.py - Fetching data from Cassandra.  
-05.data_preprocessing.py - Preprocessing the dataset (feature engineering).  
-06.data_transformation.py - Transforming the dataset for model training.  
-07.model_trainer.py - Training the machine learning model.
-
-
+---
   
 ## ⚙️ Installation & Setup  
 
@@ -79,12 +91,9 @@ After setting up the environment, run the application.py to start the applicatio
 ```bash
 python application.py
 ```
+--- 
 
-## Contributors
-Alieh Hassanzadeh
-
-
-#### Image Credits  
+## 📸 Image Credits  
 [Image by Freepik](https://www.freepik.com/free-photo/full-shot-smiley-woman-with-smartphone_26006350.htm#fromView=image_search_similar&page=1&position=7&uuid=1e193df9-3eea-43a0-b8b8-f842849831c8&new_detail=true)
 
 
