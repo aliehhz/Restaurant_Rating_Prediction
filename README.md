@@ -46,7 +46,7 @@ The application is deployed using **AWS** and **Render**.
 05.data_preprocessing.py   # Preprocessing the dataset (feature engineering).
 06.data_transformation.py  # Transforming the dataset for model training.
 07.model_trainer.py        # Training the machine learning model.
-
+```
 ---
   
 ## ⚙️ Installation & Setup  
