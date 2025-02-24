@@ -21,12 +21,12 @@ The Restaurant Rating Prediction application predicts restaurant ratings based o
 The project uses machine learning models like Random Forest and other classifiers to predict restaurant ratings. The features include location, cuisine type, and customer feedback, and the application is deployed using AWS and Render.
 
 ## Main Python Scripts:
-01.data_ingestion.py - Data ingestion from external sources.
-02.data_cleaning.py - Cleaning the dataset for analysis.
-03.upload_to_cassandra.py - Uploading processed data to a Cassandra database.
-04.download_from_cassandra.py - Fetching data from Cassandra.
-05.data_preprocessing.py - Preprocessing the dataset (feature engineering).
-06.data_transformation.py - Transforming the dataset for model training.
+01.data_ingestion.py - Data ingestion from external sources.  
+02.data_cleaning.py - Cleaning the dataset for analysis.  
+03.upload_to_cassandra.py - Uploading processed data to a Cassandra database.  
+04.download_from_cassandra.py - Fetching data from Cassandra.  
+05.data_preprocessing.py - Preprocessing the dataset (feature engineering).  
+06.data_transformation.py - Transforming the dataset for model training.  
 07.model_trainer.py - Training the machine learning model.
 
 ## 🛠️ Tech Stack
