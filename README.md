@@ -10,8 +10,6 @@
 ## Live Demo in Render
 [Restaurant Rating Prediction App in Render](https://restaurant-rating-prediction-yw9u.onrender.com)
 
-The Restaurant Rating Prediction application predicts restaurant ratings based on features like location, category, and user votes. It showcases a machine learning pipeline integrated with Flask for seamless predictions.
-
 ### Important Notes
 - The application is hosted on Render's free tier, which puts the server to sleep after a period of inactivity. As a result, it may take 1-2 minutes for the app to load initially.
 - Once the server is active, subsequent requests will load much faster.
@@ -44,7 +42,9 @@ The project uses machine learning models like Random Forest and other classifier
 ### 1️⃣ Clone the repository
 Clone the repository to your local machine:
 
+```bash
 $ git clone https://github.com/yourusername/restaurant-rating-prediction.git
+```bash
 $ cd restaurant-rating-prediction
 
 ### 2️⃣ Set up the environment
