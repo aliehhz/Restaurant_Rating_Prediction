@@ -42,27 +42,43 @@ The project uses machine learning models like Random Forest and other classifier
 ### 1️⃣ Clone the repository
 Clone the repository to your local machine:
 
-```$ git clone https://github.com/yourusername/restaurant-rating-prediction.git```
+```bash
+$ git clone https://github.com/aliehhz/restaurant-rating-prediction.git
+```
+```bash
 $ cd restaurant-rating-prediction
+```
 
 ### 2️⃣ Set up the environment
 It's recommended to use a virtual environment to manage dependencies. You can create one using venv or conda:
 
-#### For venv:
+- For venv:
+```bash
 python -m venv venv
+```
+```bash
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
 
-#### For conda:
+- For conda:
+```bash
 conda create -n restaurant-env python=3.8
+```
+```bash
 conda activate restaurant-env
+```
 
 ### 3️⃣ Install dependencies
 Install the required packages listed in requirements.txt:
+```bash
 pip install -r requirements.txt
+```
 
 ### 4️⃣ Run the application
 After setting up the environment, run the application.py to start the application:
+```bash
 python application.py
+```
 
 ## Contributors
 Alieh Hassanzadeh
