@@ -16,6 +16,13 @@
 
   ---
 
+## 🎥 Project Demo  
+Check out the full project walkthrough on YouTube!  
+
+[📺 Watch Here](https://www.youtube.com/watch?v=70gQHPDUDuE)  
+
+---
+
 ## 📂 About This Project
 This project uses **machine learning models** like **Random Forest** and other classifiers to predict restaurant ratings.  
 ### **Features Used in Prediction:**  
