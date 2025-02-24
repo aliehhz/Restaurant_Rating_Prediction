@@ -42,9 +42,7 @@ The project uses machine learning models like Random Forest and other classifier
 ### 1️⃣ Clone the repository
 Clone the repository to your local machine:
 
-```bash
-$ git clone https://github.com/yourusername/restaurant-rating-prediction.git
-```bash
+```$ git clone https://github.com/yourusername/restaurant-rating-prediction.git```
 $ cd restaurant-rating-prediction
 
 ### 2️⃣ Set up the environment
