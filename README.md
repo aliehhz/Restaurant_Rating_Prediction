@@ -4,15 +4,15 @@
 
 ## Try the live version of the project here:
 
-### Live Demo in AWS
-[Restaurant Rating Prediction App in AWS](http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/)
-
 ### Live Demo in Render
 [Restaurant Rating Prediction App in Render](https://restaurant-rating-prediction-yw9u.onrender.com)
 
 #### 📌 Important Notes
 - The application is hosted on Render's free tier, which puts the server to sleep after a period of inactivity. As a result, it may take 1-2 minutes for the app to load initially.
 - Once the server is active, subsequent requests will load much faster.
+
+### Live Demo in AWS
+[Restaurant Rating Prediction App in AWS](http://restaurantratingprediction-env.eba-mgzctncn.us-east-1.elasticbeanstalk.com/)
 
 ---
 
